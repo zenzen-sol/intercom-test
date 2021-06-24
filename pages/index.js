@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { useIntercom } from 'react-use-intercom';
+
 
 export default function Home() {
+  const { boot, shutdown, hide, show, update } = useIntercom();
   return (
     <div className={styles.container}>
       <Head>
@@ -20,6 +23,9 @@ export default function Home() {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
+
+        <button onClick={boot}>Boot intercom! ☎️</button>
+        <button onClick={show}>Show intercom! ☎️</button>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
